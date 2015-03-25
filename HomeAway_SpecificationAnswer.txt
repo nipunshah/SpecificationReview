@@ -1,0 +1,65 @@
+/*
+As a user I can edit my profile
+Only writeable users should be able to edit their profile.
+As a user I can only edit my own profile.
+As a CSR I can edit any user.
+Edit Profile and Change password should have the same behaviour for a user editing his/her profile and a CSR editing a profile.
+*/
+
+QUESTIONS:
+- Release plan for implementing this specification
+	> What is the priority and stack rank for this feature?
+	> What are the timelines for these?
+	> Are there dependencies for this feature(UX team, DB team, deployment team)? Have they been made aware of the timeline?
+- Non-writable users:
+	> Should the button be hidden or disabled?
+	> Is there a different button that shows up ('Contact HomeAway' to change profile)?
+- Edit profile:
+	> Are we backing up old entries?
+	> Specification should mention that old values should be carried over to the edit page
+	> Will the cancel button reload the previous page (settings)?
+	> Will the save button show a text on the same page or a popup dialog?
+	> Once the user / CSR saves, will we go back to the settings page or stay on this page?
+	> Edit profile and change password should have same behavior?
+		* What is same behavior? Is this regarding 'cancel' and 'save' functions?
+		* Is this behavior once the buttons / links are clicked?
+	> Is there geolocation verification for City and Hometown?
+	> Is there auto-complete for languages so that garbage values are not entered (for future data analysis)?
+	> Why is 'Name' a dropdown? Are there pre-computed choices given? What is the behavior for the drop down?
+- Settings:
+	> Is there a confirmation when user clicks on the 'Remove' link?
+	> Is there a confirmation when user decides to deactivate the link?
+	> Will the cancel button reload the previous page (settings)?
+	> Will the save button show a text on the same page or a popup dialog?
+	> Do we have verification for the profile picture that is uploaded to ensure adult / copyright / watermarked images are not uploaded?
+- Reset Password:
+	> Where is the entry point to this page? Cannot see it on profile, settings page
+	> Why is there no requirement for user to enter old password? This will add a level of security (esp on public computers)
+	> Will the cancel button reload the previous page (settings)?
+	> Will the save button show a text on the same page or a popup dialog?
+	> Will an email be sent out once password is changed?
+	> What is the passwords do not match?
+	> Is there a run-time password strength meter that will be shown to the user?
+	> Is there a 'show text' option that will be shown (common on most UX these days)
+- CSR:
+	> Where are the mockups / screen-shots for CSR edit page?
+	> Need details about how their can select a user and UX to change settings
+	> Will email be sent to user that something in their profile has changed?
+	> What is the control that they have?
+		* Can they deactivate profile?
+		* Can they unlink Facebook profile?
+		* Can they change password?
+
+TOP QUESTIONS:
+- Need mock-ups for CSR edit page
+	> Reason: This is more complex scenario than the regular user edit page, very critical to release
+	> Expected answer: Mock ups for CSR edit page along with details
+	> Effect: Developers and testers know what to implement and test and solid experience after release
+- Need entry point to change password page
+	> Reason: Entry point is very important here, else feature will be implemented but unreachable
+	> Expected answer: Change to mockup to add 'Change password' link
+	> Effect: Users can reach the page and change their password on-demand
+- Timelines and Dependencies
+	> Reason: There will be multiple projects already on-going, where does this fit? is everyone involved signed-up?
+	> Expected answer: Feature will start implementation on Date X and finish date Y. This should be prioritized over Feature Z
+	> Effect: Developers and testers can manage their bandwidth and releases accordingly and put some other features into backlog
